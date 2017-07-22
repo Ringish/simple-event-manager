@@ -1,3 +1,103 @@
+$white: #FFF;
+$black: #000;
+$accent: #4CAF50;
+$input-bg: #c6c6c6;
+$input-height: 36px;
+$input-padding:0 12px;
+$btn-height: 44px;
 body {
 	
+}
+
+.sem-container {
+	width:1220px;
+	max-width:100%;
+	margin:0 auto;
+	padding: 0 10px;
+	&:after {
+		content:'';
+		clear: both;
+		display: block;
+	}
+}
+
+// Header
+.sem-header {
+	background-size:cover;
+	padding:40px 0;
+	z-index:-3;
+	position:relative;
+	.sem-title {
+		color:$white;
+		margin:0;
+		padding:5px 0;
+	}
+	.sem-date {
+		color:$accent;
+	}
+}
+
+// Content
+.sem-content {
+	width:65%;
+	float:left;
+	padding:10px 40px 10px 10px;
+	box-sizing:border-box;
+}
+
+// Registration form
+.sem-registration {
+	position:relative;
+	width:35%;
+	float:left;
+	padding:10px;
+	margin-top:-80px;
+	box-sizing:border-box;
+	background:$black;
+	color:$white;
+	&:before,&:after {
+		position:absolute;
+		top:-7.5%;
+		left:-7.5%;
+		width:115%;
+		height:115%;
+		background:rgba(28, 39, 14, 0.4);
+		content:'';
+		z-index:-2;
+	}
+	&:after {
+		top:-3%;
+		left:-3%;
+		width:106%;
+		height:106%;
+		background:rgba(56, 142, 60, 0.4);
+		z-index:-1;
+	}
+}
+.sem-label {
+	display:block;
+	margin-bottom:1em;
+}
+.sem-input {
+	display:block;
+	width:100%;
+	background:$input-bg;
+	height:$input-height;
+	line-height:$input-height;
+	padding:$input-padding;
+	border:0;
+	transition:.2s;
+	&:hover {
+		background:$white;
+	}
+}
+.sem-btn {
+	display:block;
+	height:$btn-height;
+	background:$accent;
+	color:$white;
+	border:0;
+	text-transform:uppercase;
+	text-align:center;
+	width:100%;
 }

@@ -264,6 +264,14 @@ class SEM {
 }
 
 
+public function event_template($template) {
+	if (is_singular('event')) {
+		$template = plugin_dir_path( dirname( __FILE__ ) ).'/public/partials/sem-single-event.php';
+	}
+	return $template;
+}
+
+
 	/**
 	* Register all of the hooks related to the admin area functionality
 	* of the plugin.
@@ -280,6 +288,8 @@ class SEM {
 		$this->loader->add_action( 'init', $this, 'register_post_types' );
 		$this->loader->add_action( 'add_meta_boxes', $this, 'add_sem_meta_boxes' );
 		$this->loader->add_action( 'save_post', $this, 'save_events_meta');
+
+		$this->loader->add_filter( 'template_include', $this, 'event_template');
 
 	}
 
